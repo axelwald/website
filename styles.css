@@ -1,0 +1,42 @@
+
+body{
+    margin: 0;
+}
+
+.container{
+    background-color: blue; /* Color of the outer div */
+    display: flex; /* Enables flexbox layout */
+    justify-content: center; /* Centers the inner div horizontally */
+    align-items: center; /* Centers the inner div vertically */
+    height: 100vh;
+    width: 100vw; 
+}
+
+.page{
+    display: flex;
+    width: 80%;
+    height: 80%;
+    background: lightblue;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.list1,.list2{
+    background-color: yellow;
+}
+
+.list1{
+    display;
+    height: 100%;
+    width: 40%;
+}
+.list2{
+
+}
+
+h1{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}

@@ -1,58 +1,105 @@
 
-body{
+html, body {
     margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
 }
 
-.container{
-    background-color: blue; /* Color of the outer div */
-    display: flex; /* Enables flexbox layout */
-    flex-direction: column;
-    justify-content: center; /* Centers the inner div horizontally */
-    align-items: center; /* Centers the inner div vertically */
+.bg-image {
+    box-sizing: border-box;
+    display: block;
     height: 100vh;
-    width: 100vw; 
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    background: url(https://media.4-paws.org/1/f/3/5/1f35d719b98be877eb950e10826d2615828706ef/VIER_PFOTEN_2021-02-26_00075-2890x2000-1920x1329.jpg);
+    background-size: cover;
+    filter:blur(3px)
+}
+.container{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%
 }
 
-.page{
+.layout{
     display: flex;
-    width: 80%;
     height: 80%;
-    background: lightblue;
-    margin: auto;
-    padding: 10px;
+    width: 80%;
+    background-color: rgba(0,0,0, 0.3);
+    margin: 10px auto;
+
+
+}
+
+.item-left::-webkit-scrollbar,.item-right::-webkit-scrollbar{
+    display: none;
+}
+.item-left,.item-right{
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    grid-template-columns:calc(33% + 1vw);
+    grid-template-rows: repeat(3, 1fr); /* 3 rows of equal height */
+
+    display: grid;
+    grid-gap: 0.2rem;
+    width: 100%; /* Ensure full width */
+    height: auto; /* Auto height based on content */
+
+    background: rgba(255,255,255, 0.5);
+    margin: 0 auto;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.item-right img{
+    width: 100%; /* Increase this value as needed, but not over 100% */
+    max-width: 400px; /* Adjust the max-width as needed */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: contain; /* Keep the entire image visible */
+    margin: auto; /* Center the image in the grid cell */
     border-radius: 5px;
 }
 
-.list1,.list2{
-    background-color: yellow;   
+.item-left img{
+
+    width: 100%; /* Increase this value as needed, but not over 100% */
+    max-width: 300px; /* Adjust the max-width as needed */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: contain; /* Keep the entire image visible */
+    margin: auto; /* Center the image in the grid cell */
+    border-radius: 5px;
+}
+
+
+.item-right{
+    grid-template-columns: repeat(1, 1fr); /* 2 columns of equal width */
+    grid-template-rows: repeat(3, 1fr); /* 3 rows of equal height */
+    
+    height: 80%;
     width: 40%;
-    height: auto;
-    margin: 5px auto;
+}
+
+.item-left{
+    height: 90%;
+    width: 35%;
+    grid-template-columns: repeat(2, 1fr); /* Fewer columns, hence larger cells */
+    grid-template-rows: repeat(2, 1fr); /* Fewer rows */
+
+
+}
+
+.container h1{
+    background-color: rgba(0,0,0, 0.3   );
+    color: white;
+    margin: 0;
     padding: 10px;
-    border-radius: 4px;
-}
-
-.list1{
-    display: grid;
+    text-align: center;
+    filter: drop-shadow(50px 10px 15px black);
     
 }
-.list1 img{
-    width: 500px;
-    height: auto;
-    max-height: 100%;
-    max-width: 100%;
-    border-radius: 5px; 
-    
-
-}
-.list2{
-}
-
-
-h1{
-    display: grid;
-    align-items: center;
-    background-color: darkblue;
-    padding: 15px;
-    border-radius: 10px;
-}   
